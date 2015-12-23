@@ -27,7 +27,7 @@
     "minus-x-frame-origin": "./bin.js"
   },
   "dependencies": {
-    "@maboiteaspam/get-bind": "maboiteaspam/get-bind",
+    "@maboiteaspam/get-bind": "^1.0.1",
     "@maboiteaspam/set-verbosity": ">=2.0.3 <3.0.0-0",
     "@maboiteaspam/show-help": ">=3.0.0 <4.0.0-0",
     "debug": ">=2.2.0 <3.0.0-0",
