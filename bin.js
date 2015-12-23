@@ -15,7 +15,7 @@ function usage () {/*
         minus-x-frame-origin -v
         minus-x-frame-origin -h
         minus-x-frame-origin -b localhost:3000
-        minus-x-frame-origin -b localhost:3000 x-frame-origin,X-Powered-By
+        minus-x-frame-origin -b localhost:3000 x-frame-origin X-Powered-By
  */}
 
 var argv  = require('minimist')(process.argv.slice(2));

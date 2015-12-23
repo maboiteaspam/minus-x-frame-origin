@@ -26,7 +26,7 @@ http proxy to temper response headers
         minus-x-frame-origin -v
         minus-x-frame-origin -h
         minus-x-frame-origin -b localhost:3000
-        minus-x-frame-origin -b localhost:3000 x-frame-origin,X-Powered-By
+        minus-x-frame-origin -b localhost:3000 x-frame-origin X-Powered-By
 ```
 
 ## API
