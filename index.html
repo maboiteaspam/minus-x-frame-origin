@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset='utf-8'>
+    <meta http-equiv="X-UA-Compatible" content="chrome=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <link href='https://fonts.googleapis.com/css?family=Architects+Daughter' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" type="text/css" href="stylesheets/stylesheet.css" media="screen">
+    <link rel="stylesheet" type="text/css" href="stylesheets/github-light.css" media="screen">
+    <link rel="stylesheet" type="text/css" href="stylesheets/print.css" media="print">
+
+    <!--[if lt IE 9]>
+    <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+
+    <title>Minus-x-frame-origin by maboiteaspam</title>
+  </head>
+
+  <body>
+    <header>
+      <div class="inner">
+        <h1>Minus-x-frame-origin</h1>
+        <h2>http proxy to temper response headers</h2>
+        <a href="https://github.com/maboiteaspam/minus-x-frame-origin" class="button"><small>View project on</small> GitHub</a>
+      </div>
+    </header>
+
+    <div id="content-wrapper">
+      <div class="inner clearfix">
+        <section id="main-content">
+          <h1>
+<a id="minus-x-frame-origin" class="anchor" href="#minus-x-frame-origin" aria-hidden="true"><span class="octicon octicon-link"></span></a>minus-x-frame-origin</h1>
+
+<p>http proxy to temper response headers</p>
+
+<h2>
+<a id="install" class="anchor" href="#install" aria-hidden="true"><span class="octicon octicon-link"></span></a>Install</h2>
+
+<pre><code>npm i @maboiteaspam/minus-x-frame-origin --save-dev
+</code></pre>
+
+<h2>
+<a id="usage" class="anchor" href="#usage" aria-hidden="true"><span class="octicon octicon-link"></span></a>Usage</h2>
+
+<div class="highlight highlight-source-shell"><pre>
+    @maboiteaspam/minus-x-frame-origin 1.0.0
+    http proxy to temper response headers
+
+    Usage
+        minus-x-frame-origin [opts] [headers to delete...]
+
+    Options
+        -v<span class="pl-k">|</span>--verbose          verbose
+        -h<span class="pl-k">|</span>--help             show <span class="pl-c1">help</span>
+        -b<span class="pl-k">|</span>--bind             address to <span class="pl-c1">bind</span> such localhost:3000
+        -d<span class="pl-k">|</span>--delete           headers to delete
+
+    Examples
+        minus-x-frame-origin -v
+        minus-x-frame-origin -h
+        minus-x-frame-origin -b localhost:3000
+        minus-x-frame-origin -b localhost:3000 x-frame-origin X-Powered-By</pre></div>
+
+<h2>
+<a id="api" class="anchor" href="#api" aria-hidden="true"><span class="octicon octicon-link"></span></a>API</h2>
+
+<p><code>minus-x-frame-origin</code> is a <code>function (bind, toDelete)</code> which returns a node http <code>server</code></p>
+
+<p><strong>bind</strong> is a parameter of type <code>string</code> such <code>127.0.0.1:6666</code>.</p>
+
+<p><strong>toDelete</strong> is a parameter of type <code>array</code>, it must contains a list of response headers to delete such <code>['x-frame-origin']</code>.</p>
+
+<div class="highlight highlight-source-js"><pre>    <span class="pl-c1">require</span>(<span class="pl-s"><span class="pl-pds">'</span>@maboiteaspam/minus-x-frame-origin<span class="pl-pds">'</span></span>)(<span class="pl-s"><span class="pl-pds">'</span>localhost:3000<span class="pl-pds">'</span></span>, [<span class="pl-s"><span class="pl-pds">'</span>X-GitHub-Request-Id<span class="pl-pds">'</span></span>])
+      .<span class="pl-en">on</span>(<span class="pl-s"><span class="pl-pds">'</span>error<span class="pl-pds">'</span></span>, <span class="pl-en">console</span>.<span class="pl-smi">error</span>)
+      .<span class="pl-en">on</span>(<span class="pl-s"><span class="pl-pds">'</span>listening<span class="pl-pds">'</span></span>, <span class="pl-k">function</span> () {
+        <span class="pl-en">console</span>.<span class="pl-c1">log</span>(<span class="pl-s"><span class="pl-pds">'</span>proxy is up at localhost:3000<span class="pl-pds">'</span></span>)
+      })</pre></div>
+
+<h2>
+<a id="read-more" class="anchor" href="#read-more" aria-hidden="true"><span class="octicon octicon-link"></span></a>Read More</h2>
+
+<ul>
+<li><a href="https://github.com/maboiteaspam/get-bind">https://github.com/maboiteaspam/get-bind</a></li>
+<li><a href="https://nodejs.org/api/net.html#net_server_listen_handle_callback">https://nodejs.org/api/net.html#net_server_listen_handle_callback</a></li>
+<li><a href="https://nodejs.org/api/http.html#http_class_http_server">https://nodejs.org/api/http.html#http_class_http_server</a></li>
+<li><a href="http://stackoverflow.com/questions/20351637/how-to-create-a-simple-http-proxy-in-node-js">http://stackoverflow.com/questions/20351637/how-to-create-a-simple-http-proxy-in-node-js</a></li>
+<li><a href="https://github.com/nodejitsu/node-http-proxy">https://github.com/nodejitsu/node-http-proxy</a></li>
+<li><a href="https://github.com/rse/node-http-proxy-simple">https://github.com/rse/node-http-proxy-simple</a></li>
+<li><a href="https://github.com/No9/harmon">https://github.com/No9/harmon</a></li>
+<li><a href="https://github.com/braintree/mallorca">https://github.com/braintree/mallorca</a></li>
+<li><a href="https://github.com/tomas/needle">https://github.com/tomas/needle</a></li>
+<li><a href="https://github.com/pkrumins/nodejs-proxy">https://github.com/pkrumins/nodejs-proxy</a></li>
+<li><a href="https://github.com/christophebe/simple-proxies">https://github.com/christophebe/simple-proxies</a></li>
+<li><a href="https://github.com/InstantWebP2P/node-httpp-proxy">https://github.com/InstantWebP2P/node-httpp-proxy</a></li>
+</ul>
+        </section>
+
+        <aside id="sidebar">
+          <a href="https://github.com/maboiteaspam/minus-x-frame-origin/zipball/master" class="button">
+            <small>Download</small>
+            .zip file
+          </a>
+          <a href="https://github.com/maboiteaspam/minus-x-frame-origin/tarball/master" class="button">
+            <small>Download</small>
+            .tar.gz file
+          </a>
+
+          <p class="repo-owner"><a href="https://github.com/maboiteaspam/minus-x-frame-origin"></a> is maintained by <a href="https://github.com/maboiteaspam">maboiteaspam</a>.</p>
+
+          <p>This page was generated by <a href="https://pages.github.com">GitHub Pages</a> using the Architect theme by <a href="https://twitter.com/jasonlong">Jason Long</a>.</p>
+        </aside>
+      </div>
+    </div>
+
+  
+  </body>
+</html>
