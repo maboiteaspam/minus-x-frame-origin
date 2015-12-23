@@ -1,6 +1,6 @@
 {
   "name": "@maboiteaspam/minus-x-frame-origin",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "http proxy to temper response headers",
   "main": "index.js",
   "scripts": {
@@ -27,7 +27,7 @@
     "minus-x-frame-origin": "./bin.js"
   },
   "dependencies": {
-    "@maboiteaspam/get-bind": "^1.0.1",
+    "@maboiteaspam/get-bind": ">=1.0.1 <2.0.0-0",
     "@maboiteaspam/set-verbosity": ">=2.0.3 <3.0.0-0",
     "@maboiteaspam/show-help": ">=3.0.0 <4.0.0-0",
     "debug": ">=2.2.0 <3.0.0-0",
