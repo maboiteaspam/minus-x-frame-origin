@@ -20,6 +20,7 @@ var minusXFrameOrigin = function (bind, toDelete) {
     options.method  = client_req.method;
     options.headers = client_req.headers;
 
+    // firefox autodetect proxy function has some weird behavior, not sure what is expected.
     if (!options.host) return debug(client_req), client_res.writeHead(200), client_res.end();
 
     debug('options %j', options)
@@ -49,10 +50,6 @@ var minusXFrameOrigin = function (bind, toDelete) {
 
   process.nextTick(function () {
     server.listen(bind.match(/([^:]+)$/)[1], bind.match(/^([^:]+)/)[1]);
-    console.log(
-      bind.match(/([^:]+)$/)[1],
-      bind.match(/^([^:]+)/)[1]
-    )
   })
 
   return server;
