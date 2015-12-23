@@ -16,8 +16,8 @@ var minusXFrameOrigin = function (bind, toDelete) {
   function onRequest(client_req, client_res) {
     debug('got request %s %s', client_req.url, client_req.method)
 
-    var options = url.parse(client_req.url);
-    options.method = client_req.method;
+    var options     = url.parse(client_req.url);
+    options.method  = client_req.method;
     options.headers = client_req.headers;
 
     if (!options.host) return debug(client_req), client_res.writeHead(200), client_res.end();
