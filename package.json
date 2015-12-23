@@ -1,29 +1,38 @@
 {
-    "name": "@maboiteaspam/minus-x-frame-origin",
-    "version": "1.0.0",
-    "description": "http proxy to temper response headers",
-    "main": "index.js",
-    "scripts": {
-        "test": "echo \"Error: no test specified\" && exit 1",
-        "dcheck": "npm outdated --depth=0",
-        "patch": "npm version patch -m \"patch %s\"",
-        "minor": "npm version minor -m \"minor %s\"",
-        "major": "npm version major -m \"major %s\"",
-        "preversion": "echo \"npm test: not defined\" && npi --explicit",
-        "version": "echo \"npm run build: not defined\"",
-        "postversion": "git push && git push --tags",
-        "public": "npm publish --access=public"
-    },
-    "keywords": [
-        "http",
-        "proxy",
-        "temper",
-        "response",
-        "header"
-    ],
-    "author": "maboiteaspam",
-    "license": "WTF",
-    "bin": {
-        "minus-x-frame-origin": "./bin.js"
-    }
+  "name": "@maboiteaspam/minus-x-frame-origin",
+  "version": "1.0.0",
+  "description": "http proxy to temper response headers",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dcheck": "npm outdated --depth=0",
+    "patch": "npm version patch -m \"patch %s\"",
+    "minor": "npm version minor -m \"minor %s\"",
+    "major": "npm version major -m \"major %s\"",
+    "preversion": "echo \"npm test: not defined\" && npi --explicit",
+    "version": "echo \"npm run build: not defined\"",
+    "postversion": "git push && git push --tags",
+    "public": "npm publish --access=public"
+  },
+  "keywords": [
+    "http",
+    "proxy",
+    "temper",
+    "response",
+    "header"
+  ],
+  "author": "maboiteaspam",
+  "license": "WTF",
+  "bin": {
+    "minus-x-frame-origin": "./bin.js"
+  },
+  "dependencies": {
+    "@maboiteaspam/get-bind": "maboiteaspam/get-bind",
+    "@maboiteaspam/set-verbosity": "^2.0.3",
+    "@maboiteaspam/show-help": "^3.0.0",
+    "debug": "^2.2.0",
+    "get-port": "^2.1.0",
+    "minimist": "^1.2.0",
+    "promise": "^7.1.1"
+  }
 }
