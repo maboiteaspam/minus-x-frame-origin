@@ -1,6 +1,6 @@
 {
   "name": "@maboiteaspam/minus-x-frame-origin",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "http proxy to temper response headers",
   "main": "index.js",
   "scripts": {
@@ -28,11 +28,11 @@
   },
   "dependencies": {
     "@maboiteaspam/get-bind": "maboiteaspam/get-bind",
-    "@maboiteaspam/set-verbosity": "^2.0.3",
-    "@maboiteaspam/show-help": "^3.0.0",
-    "debug": "^2.2.0",
-    "get-port": "^2.1.0",
-    "minimist": "^1.2.0",
-    "promise": "^7.1.1"
+    "@maboiteaspam/set-verbosity": ">=2.0.3 <3.0.0-0",
+    "@maboiteaspam/show-help": ">=3.0.0 <4.0.0-0",
+    "debug": ">=2.2.0 <3.0.0-0",
+    "get-port": ">=2.1.0 <3.0.0-0",
+    "minimist": ">=1.2.0 <2.0.0-0",
+    "promise": ">=7.1.1 <8.0.0-0"
   }
 }
